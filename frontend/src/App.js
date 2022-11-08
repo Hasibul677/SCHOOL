@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import PrivateRoute from "./Route/PrivateRoute";
+import OnlineAdmissionRoot from './components/OnlineRegistrationForm/OnlineAdmissionRoot/OnlineAdmissionRoot'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           element={
             <>
               <Header />
+              <OnlineAdmissionRoot />
             </>
           }
         />
