@@ -1,7 +1,7 @@
 import React from 'react';
 import StudentSection from '../StudentSection/StudentSection';
 import StudentPreEdu from '../StudentPreEdu/StudentPreEdu';
-import ParentsSection from '../StudentPreEdu/StudentPreEdu';
+import ParentsSection from '../ParentsSection/ParentsSection';
 
 const OnlineAdmissionRoot = () => {
 
