@@ -6,16 +6,13 @@ const ParentsSection = () => {
   const [data, setData] = useState({
     // grudian section
     fatherName: '',
+    motherName: '',
     fatherNID: '',
     fatherPhone: '',
     fatherOccupation: '',
-    motherName: '',
-    motherNID: '',
-    motherPhone: '',
     motherOccupation: '',
     guardianName: '',
     guardianRelation: '',
-    guardianEmail: '',
     guardianOccupation: '',
     guardianAddress: '',
     guardianAvatar: '',

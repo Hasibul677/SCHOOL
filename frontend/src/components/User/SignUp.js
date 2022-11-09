@@ -1,60 +1,139 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios"
+import swal from "sweetalert"
 
 const SignUp = () => {
-  
+  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirm: "",
+    profile: "",
+  });
+
+  const handleChange = (e) => {
+    if (e.target.name === "profile") {
+      if (e.target.files[0].size <= 2097152) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (reader.readyState === 2) {
+            setAvatar(reader.result);
+            let info = { ...data };
+            info[e.target.name] = reader.result;
+            setData(info);
+          }
+        };
+        reader.readAsDataURL(e.target.files[0]);
+      } else {
+        swal("File size should be less or equal 2MB!");
+      }
+    } else {
+      let info = { ...data };
+      info[e.target.name] = e.target.value;
+      setData(info);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`http://localhost:5000/api/v1/createUser`, data)
+
+  };
+
   return (
-    <div className='m-3 flex justify-center'>
-    <div class=" w-full md:w-1/2">
-    <div>
-      <h2 className="text-center text-3xl font-bold">Sign Up</h2>
+    <div className="m-3 mt-32 flex justify-center items-center">
+      <div className=" w-full md:w-1/3">
+        <div>
+          <h2 className="text-center text-3xl font-serif uppercase ">
+            Registration Form
+          </h2>
+        </div>
+        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div className="flex justify-center">
+            <div>
+              <img
+                className="w-20 h-20 rounded-full"
+                src={avatar}
+                alt=""
+              />
+            </div>
+          </div>
+          <div className="mb-4">
+            <label className="uppercase block text-gray-700 text-xs font-bold mb-2">
+              Name
+            </label>
+            <input
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              placeholder="Full Name"
+              name="name"
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-4">
+            <label className="uppercase block text-gray-700 text-xs font-bold mb-2">
+              Email
+            </label>
+            <input
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              placeholder="Email Address"
+              name="email"
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div className="">
+            <label className="uppercase block text-gray-700 text-xs font-bold mb-2 ">
+              Password
+            </label>
+            <input
+              className="shadow border border-gray-200 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="password"
+              placeholder="*********"
+              name="password"
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div className="">
+            <label className="uppercase block text-gray-700 text-xs font-bold mb-2 ">
+              Confirm Password
+            </label>
+            <input
+              className="shadow border border-gray-200 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="password"
+              placeholder="*********"
+              name="confirm"
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div className="mb-6">
+            <label className="uppercase block text-gray-700 text-xs font-bold mb-2 ">
+              Profile
+            </label>
+            <input
+              className="shadow border border-gray-200 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="file"
+              name="profile"
+              required
+              onChange={handleChange}
+            />
+          </div>
+          <div className="flex items-center justify-end">
+            <button
+              className="bg-sky-700 hover:bg-sky-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Sign Up
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div class="mb-4">
-        <label class="uppercase block text-gray-700 text-xs font-bold mb-2" for="Email">
-          Username
-        </label>
-        <input
-          class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          type="text"
-          placeholder="User Name"
-        />
-      </div>
-      <div class="mb-4">
-        <label class="uppercase block text-gray-700 text-xs font-bold mb-2" for="email">
-          Email
-        </label>
-        <input
-          class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          type="text"
-          placeholder="Email Address"
-        />
-      </div>
-      <div class="mb-6">
-        <label class="uppercase block text-gray-700 text-xs font-bold mb-2 " for="password">
-          Password
-        </label>
-        <input
-          class="shadow border border-gray-200 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-          type="password"
-          placeholder="******************"
-        />
-        <p class="text-red-500 text-xs italic">Please choose a password.</p>
-      </div>
-      <div class="flex items-center justify-between">
-        <button
-          class="bg-sky-700 hover:bg-sky-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
-        >
-          Sign Up
-        </button>
-        <a class="inline-block align-baseline font-bold text-sm text-sky-700 hover:text-blue-800" href="#">
-          Forgot Password?
-        </a>
-      </div>
-    </form>
-    <p class="text-center text-gray-500 text-xs">&copy; 2022 <i><a href="">Green Software Group</a></i> All rights reserved.</p>
-  </div>
-  </div>
   );
 };
 

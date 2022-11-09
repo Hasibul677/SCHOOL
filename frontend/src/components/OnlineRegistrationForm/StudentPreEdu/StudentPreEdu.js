@@ -7,7 +7,7 @@ const StudentPreEdu = () => {
     previousSchlName: '',
     preRoll: '',
     previousClass: '',
-    previousSchDist: '',
+    preSchoolAddress: '',
 
   });
 

@@ -50,49 +50,49 @@ const Contact = () => {
         <div className="md:w-1/2">
           <img src={contact_gif} alt="" srcSet="" className='md:p-20'/>
         </div>
-        <div class="w-full md:w-1/2 px-5">
+        <div className="w-full md:w-1/2 px-5">
           {/* contact form */}
-          <form class="bg-white border shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <form className="bg-white border shadow-md rounded px-8 pt-6 pb-8 mb-4">
             {/* name field */}
-            <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" for="name">
                 Name
               </label>
               <input
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-40 focus:outline-none focus:font-light"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-40 focus:outline-none focus:font-light"
                 id="name"
                 type="text"
                 placeholder="Full Name"
               />
             </div>
             {/* Number field */}
-            <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" for="phone">
                 Phone
               </label>
               <input
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-40 focus:outline-none focus:font-light"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-40 focus:outline-none focus:font-light"
                 id="password"
                 type="phone"
                 placeholder="Phone Number"
               />
             </div>
             {/* Message field */}
-            <div class="mb-4">
-              <label for="message" class="block text-gray-700 text-sm font-bold mb-2">
+            <div className="mb-4">
+              <label for="message" className="block text-gray-700 text-sm font-bold mb-2">
                 Write your message
               </label>
               <textarea
                 id="message"
                 rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-40 focus:outline-none focus:font-light"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2 border-gray-40 focus:outline-none focus:font-light"
                 placeholder="Your message..."
               ></textarea>
             </div>
             {/* send button */}
-            <div class="flex items-center justify-between">
+            <div className="flex items-center justify-between">
               <button
-                class="bg-sky-700 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+                className="bg-sky-700 hover:bg-sky-800 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
                 type="button"
               >
                 Send

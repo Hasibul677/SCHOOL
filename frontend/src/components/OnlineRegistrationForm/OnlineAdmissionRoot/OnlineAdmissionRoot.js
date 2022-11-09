@@ -9,8 +9,8 @@ const OnlineAdmissionRoot = () => {
         <div>
             <form action="">
                 <StudentSection />
-                <StudentPreEdu />
                 <ParentsSection />
+                <StudentPreEdu />
             </form>
         </div>
     );

@@ -15,6 +15,9 @@ const StudentSection = () => {
     village: '',
     religion: '',
     birthCertificate: '',
+    religion:'',
+    blood:'',
+    transport:'',
     studentAvatar: '',
   });
 
