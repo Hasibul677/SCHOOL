@@ -30,7 +30,7 @@ const SignUp = () => {
         };
         reader.readAsDataURL(e.target.files[0]);
       } else {
-        swal("File size should be less or equal 2MB!");
+        swal("File sizes should be less or equal 2MB!");
       }
     } else {
       let info = { ...data };
