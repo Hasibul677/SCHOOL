@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import axios from "axios"
+import React, { useEffect, useState } from "react";
 import swal from "sweetalert"
+import { useDispatch, useSelector } from "react-redux"
+import { register } from "../../Actions/userAction";
+import { CLEAR_ERROR } from "../../Constants/userConstants";
 
 const SignUp = () => {
+  const { user, error, isAuthenticated } = useSelector(state => state.user)
+  const dispatch = useDispatch();
   const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
   const [data, setData] = useState({
     name: "",
@@ -37,9 +41,19 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`http://localhost:5000/api/v1/createUser`, data)
+    dispatch(register(data));
 
   };
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(CLEAR_ERROR());
+    }
+
+  }, [dispatch, error, isAuthenticated]);
+  
+  console.log(user);
 
   return (
     <div className="m-3 mt-32 flex justify-center items-center">
