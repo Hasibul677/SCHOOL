@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import swal from "sweetalert"
-import { useDispatch, useSelector } from "react-redux"
-import { register } from "../../Actions/userAction";
-import { CLEAR_ERROR } from "../../Constants/userConstants";
+import swal from "sweetalert";
+import { useDispatch, useSelector } from "react-redux";
+import { clearError, register } from "../../Actions/userAction";
 
 const SignUp = () => {
-  const { user, error, isAuthenticated } = useSelector(state => state.user)
+  const { user, error, isAuthenticated } = useSelector((state) => state.user);
   const dispatch = useDispatch();
-  const [avatar, setAvatar] = useState("https://www.w3schools.com/howto/img_avatar.png");
+  const [avatar, setAvatar] = useState(
+    "https://www.w3schools.com/howto/img_avatar.png"
+  );
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -41,19 +42,20 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(register(data));
-
+    if (data.password === data.confirm) {
+      dispatch(register(data));
+    } else {
+      alert("Password not matching");
+    }
   };
 
   useEffect(() => {
     if (error) {
-      alert.error(error);
-      dispatch(CLEAR_ERROR());
+      dispatch(clearError());
     }
-
   }, [dispatch, error, isAuthenticated]);
-  
-  console.log(user);
+
+  console.log(data);
 
   return (
     <div className="m-3 mt-32 flex justify-center items-center">
@@ -63,14 +65,13 @@ const SignUp = () => {
             Registration Form
           </h2>
         </div>
-        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
           <div className="flex justify-center">
             <div>
-              <img
-                className="w-20 h-20 rounded-full"
-                src={avatar}
-                alt=""
-              />
+              <img className="w-20 h-20 rounded-full" src={avatar} alt="" />
             </div>
           </div>
           <div className="mb-4">

@@ -56,6 +56,18 @@ const admissionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    religion: {
+      type: String,
+      required: true,
+    },
+    blood: {
+      type: String,
+      required: true,
+    },
+    transport: {
+      type: String,
+      required: true,
+    },
     studentAvatar: {
       public_id: { type: String, required: true },
     },
@@ -98,11 +110,11 @@ const admissionSchema = new mongoose.Schema(
       required: true,
     },
     // Student Previous Education Information
-    preSchool: {
+    previousSchlName: {
       type: String,
       required: true,
     },
-    preClass: {
+    previousClass: {
       type: Number,
       required: true,
     },

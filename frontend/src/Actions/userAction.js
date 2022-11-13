@@ -1,4 +1,4 @@
-import { REGISTER_USER_FAIL, REGISTER_USER_REQUEST, REGISTER_USER_SUCCESS } from "../Constants/userConstants";
+import { CLEAR_ERROR, REGISTER_USER_FAIL, REGISTER_USER_REQUEST, REGISTER_USER_SUCCESS } from "../Constants/userConstants";
 import axios from "axios"
 
 
@@ -29,3 +29,9 @@ export const register = (userData) => async (dispatch) => {
         });
     }
 };
+
+// Clearing Error
+export const clearError = () => async (dispatch) => {
+    dispatch({ type: CLEAR_ERROR });
+  };
+  

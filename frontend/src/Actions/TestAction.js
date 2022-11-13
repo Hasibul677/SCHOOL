@@ -27,7 +27,3 @@ export const getUser = () => async (dispatch) => {
   }
 };
 
-// Clearing Error
-export const clearError = () => async (dispatch) => {
-  dispatch({ type: CLEAR_ERROR });
-};
