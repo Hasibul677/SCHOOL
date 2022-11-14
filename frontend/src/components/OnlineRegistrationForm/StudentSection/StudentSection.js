@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { studentInfoForm } from "../../../Actions/admissionAction";
 
 const StudentSection = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     // student section
-    fullName: '',
-    addClass: '',
-    gender: '',
-    birth: '',
-    phone: '',
-    email: '',
-    division: '',
-    district: '',
-    upazila: '',
-    village: '',
-    religion: '',
-    birthCertificate: '',
-    religion:'',
-    blood:'',
-    transport:'',
-    studentAvatar: '',
+    fullName: "",
+    addClass: "",
+    gender: "",
+    birth: "",
+    phone: "",
+    email: "",
+    division: "",
+    district: "",
+    upazila: "",
+    village: "",
+    religion: "",
+    birthCertificate: "",
+    blood: "",
+    transport: "",
+    studentAvatar: "",
   });
 
   const handleChange = (e) => {
     setData({
       ...data,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
+
+  useEffect(() => {
+    dispatch(studentInfoForm(data));
+  }, [data, dispatch]);
 
   return (
     <div>
@@ -35,8 +41,10 @@ const StudentSection = () => {
         <div className="container p-8 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
           <div className="w-full flex items-center justify-center">
             <div className="bg-gray-100 py-2 px-10 w-full rounded-lg ">
-              <div className="sm:text-2xl text-2xl font-semibold mb-4 pt-5"> Student Section
-                <hr className='bg-gray-800 mt-1' />
+              <div className="sm:text-2xl text-2xl font-semibold mb-4 pt-5">
+                {" "}
+                Student Section
+                <hr className="bg-gray-800 mt-1" />
               </div>
 
               {/* All input div */}
@@ -44,7 +52,8 @@ const StudentSection = () => {
                 <div className="md:flex gap-10">
                   {/* Student's Name */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Enter Full Name"
@@ -53,7 +62,8 @@ const StudentSection = () => {
                   </div>
                   {/* Add class */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="number"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Class"
@@ -78,7 +88,8 @@ const StudentSection = () => {
                 <div className="md:flex gap-10">
                   {/* DOB */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="date"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Date of Birth"
@@ -87,7 +98,8 @@ const StudentSection = () => {
                   </div>
                   {/* Phone */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Mobile Number"
@@ -97,7 +109,8 @@ const StudentSection = () => {
 
                   {/* email */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="email"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Email Address"
@@ -109,7 +122,8 @@ const StudentSection = () => {
                 <div className="md:flex gap-10">
                   {/* Division */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Division"
@@ -118,7 +132,8 @@ const StudentSection = () => {
                   </div>
                   {/* district */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="District"
@@ -127,7 +142,8 @@ const StudentSection = () => {
                   </div>
                   {/* Upazilla */}
                   <div className="w-full md:w-1/3">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Upazila/Thana/Subdistrict"
@@ -139,7 +155,8 @@ const StudentSection = () => {
                 <div className="md:flex gap-10">
                   {/* Village */}
                   <div className="w-full md:w-full">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Village/Street Address"
@@ -148,7 +165,8 @@ const StudentSection = () => {
                   </div>
                   {/* BC */}
                   <div className="w-full md:w-full">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Birth Certificate No"
@@ -158,7 +176,8 @@ const StudentSection = () => {
 
                   {/* nationality */}
                   <div className="w-full md:w-full">
-                    <input onChange={handleChange}
+                    <input
+                      onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Nationality"
@@ -211,10 +230,11 @@ const StudentSection = () => {
                 </div>
               </div>
 
-              <div className='md:flex gap-10'>
+              <div className="md:flex gap-10">
                 {/* Photo Select */}
                 <div className="w-full md:w-1/2">
-                  <input onChange={handleChange}
+                  <input
+                    onChange={handleChange}
                     type="file"
                     className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-1 border-gray-200 placeholder-gray-600 w-full mb-3"
                     placeholder="Photo"
@@ -225,7 +245,11 @@ const StudentSection = () => {
                 <div className="py-3 mx-auto w-full md:w-1/3">
                   <div className="bg-white px-2 py-2 rounded-lg shadow-lg text-center md:w-1/2">
                     <div className="">
-                      <img className="w-full md:w-1/4 mx-auto rounded-full object-cover object-center" src="https://i1.pngguru.com/preview/137/834/449/cartoon-cartoon-character-avatar-drawing-film-ecommerce-facial-expression-png-clipart.jpg" alt="student needed" />
+                      <img
+                        className="w-full md:w-1/4 mx-auto rounded-full object-cover object-center"
+                        src="https://i1.pngguru.com/preview/137/834/449/cartoon-cartoon-character-avatar-drawing-film-ecommerce-facial-expression-png-clipart.jpg"
+                        alt="student needed"
+                      />
                     </div>
                   </div>
                 </div>
