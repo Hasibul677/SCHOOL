@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from "react-redux";
+import { guardianInfoForm } from '../../../Actions/admissionAction';
 
 const StudentPreEdu = () => {
-
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     //previous School Info
     previousSchlName: '',
@@ -17,7 +19,9 @@ const StudentPreEdu = () => {
       [e.target.name]: e.target.value,
     })
   }
-
+  useEffect(() => {
+    dispatch(guardianInfoForm(data));
+  }, [data, dispatch]);
 
   return (
     <div>
