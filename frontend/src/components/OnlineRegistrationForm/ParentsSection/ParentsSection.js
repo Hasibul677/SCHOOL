@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { preSchoolInfoForm } from "../../../Actions/admissionAction";
+import { guardianInfoForm } from "../../../Actions/admissionAction";
 
 const ParentsSection = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const ParentsSection = () => {
     });
   };
   useEffect(() => {
-    dispatch(preSchoolInfoForm(data));
+    dispatch(guardianInfoForm(data));
   }, [data, dispatch]);
 
   return (

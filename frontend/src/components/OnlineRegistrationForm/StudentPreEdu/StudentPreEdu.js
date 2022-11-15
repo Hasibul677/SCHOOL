@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
-import { guardianInfoForm } from '../../../Actions/admissionAction';
+import { preSchoolInfoForm } from '../../../Actions/admissionAction';
 
 const StudentPreEdu = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const StudentPreEdu = () => {
     })
   }
   useEffect(() => {
-    dispatch(guardianInfoForm(data));
+    dispatch(preSchoolInfoForm(data));
   }, [data, dispatch]);
 
   return (
