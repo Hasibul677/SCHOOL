@@ -33,7 +33,7 @@ const ParentsSection = () => {
     <div>
       {/* Parents Section*/}
       <section>
-        <div className="container p-8 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
+        <div className="md:px-8 py-2 bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100">
           {/* onChange={handleChange} */}
           <div className="w-full flex items-center justify-center">
             <div className="bg-gray-100 py-2 px-10 w-full rounded-lg ">
