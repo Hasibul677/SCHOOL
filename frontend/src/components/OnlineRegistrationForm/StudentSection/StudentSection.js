@@ -42,7 +42,6 @@ const StudentSection = () => {
           <div className="w-full flex items-center justify-center">
             <div className="bg-gray-100 py-2 px-10 w-full rounded-lg ">
               <div className="sm:text-2xl text-2xl font-semibold mb-4 pt-5">
-                {" "}
                 Student Section
                 <hr className="bg-gray-800 mt-1" />
               </div>
@@ -58,6 +57,7 @@ const StudentSection = () => {
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Enter Full Name"
                       name="fullName"
+                      required
                     />
                   </div>
                   {/* Add class */}
