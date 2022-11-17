@@ -48,6 +48,9 @@ const ParentsSection = () => {
                 <div className="md:flex gap-10">
                   {/* Father's Name*/}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Father's Name
+                    </label>
                     <input
                       onChange={handleChange}
                       type="text"
@@ -58,6 +61,9 @@ const ParentsSection = () => {
                   </div>
                   {/* Fathers NID Number */}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Father's NID
+                    </label>
                     <input
                       onChange={handleChange}
                       type="number"
@@ -68,6 +74,9 @@ const ParentsSection = () => {
                   </div>
                   {/* Fathers Mobile Number */}
                   <div className="w-full md:w-1/3">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Father's Phone
+                    </label>
                     <input
                       onChange={handleChange}
                       type="number"
@@ -76,51 +85,39 @@ const ParentsSection = () => {
                       name="fatherPhone"
                     />
                   </div>
+                </div>
+                <div className="md:flex gap-10">
                   {/* Father's Occupation */}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Father's Occupation
+                    </label>
                     <input
                       onChange={handleChange}
-                      type="number"
+                      type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
                       placeholder="Father's Occupation"
                       name="fatherOccupation"
                     />
                   </div>
-                </div>
-                {/* mother info */}
-                <div className="md:flex gap-10">
                   {/* Mother's Name*/}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Mothers's Name
+                    </label>
                     <input
                       onChange={handleChange}
                       type="text"
                       className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
-                      placeholder="Enter Mother's Full Name"
+                      placeholder="Enter Full Name"
                       name="motherName"
                     />
                   </div>
-                  {/* Mother's NID Number */}
+                  {/* Mother's Occupation */}
                   <div className="w-full md:w-1/3">
-                    <input
-                      onChange={handleChange}
-                      type="number"
-                      className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
-                      placeholder="Mother's NID Number"
-                      name="motherNID"
-                    />
-                  </div>
-                  {/* Mother's Mobile Number */}
-                  <div className="w-full md:w-1/3">
-                    <input
-                      onChange={handleChange}
-                      type="number"
-                      className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
-                      placeholder="Mother's Mobile Number"
-                      name="motherPhone"
-                    />
-                  </div>
-                  {/* mother's Occupation */}
-                  <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Mother's Name
+                    </label>
                     <input
                       onChange={handleChange}
                       type="number"
@@ -134,6 +131,9 @@ const ParentsSection = () => {
                 <div className="md:flex gap-10">
                   {/*  Guardian Name */}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Guardian's Name
+                    </label>
                     <input
                       onChange={handleChange}
                       type="text"
@@ -144,6 +144,9 @@ const ParentsSection = () => {
                   </div>
                   {/*  Guardian Relation  */}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Guardian's Relation
+                    </label>
                     <input
                       onChange={handleChange}
                       type="text"
@@ -154,6 +157,9 @@ const ParentsSection = () => {
                   </div>
                   {/* Guardian Phone */}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Guardian's Phone Number
+                    </label>
                     <input
                       onChange={handleChange}
                       type="text"
@@ -162,22 +168,14 @@ const ParentsSection = () => {
                       name="GuardianPhone"
                     />
                   </div>
-
-                  {/* Guardian email */}
-                  <div className="w-full md:w-1/3">
-                    <input
-                      onChange={handleChange}
-                      type="email"
-                      className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
-                      placeholder="Guardian Email Address"
-                      name="guardianEmail"
-                    />
-                  </div>
                 </div>
 
                 <div className="md:flex gap-10">
                   {/* Guardian Occupation */}
                   <div className="w-full md:w-1/3">
+                  <label className="block text-gray-700 text-sm font-bold mb-2">
+                  Guardian's Occupation
+                    </label>
                     <input
                       onChange={handleChange}
                       type="text"
@@ -186,38 +184,30 @@ const ParentsSection = () => {
                       name="guardianOccupation"
                     />
                   </div>
-                  {/*  Guardian Address */}
-                  <div className="w-full md:w-1/3">
-                    <input
-                      onChange={handleChange}
-                      type="text"
-                      className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-2 border-gray-200 placeholder-gray-600 w-full mb-3"
-                      placeholder=" Guardian Full Address"
-                      name="guardianAddress"
-                    />
-                  </div>
-                  {/* Photo Select */}
-                  <div className="w-full md:w-1/3">
-                    <input
-                      onChange={handleChange}
-                      type="file"
-                      className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-1 border-gray-200 placeholder-gray-600 w-full mb-3"
-                      placeholder="Photo"
-                      name="guardianAvatar"
-                    />
-                  </div>
                   {/* Guardian Avatar */}
-                  <div className="py-3 center mx-auto w-full md:w-1/3">
-                    <div className="bg-white px-4 py-2 rounded-lg shadow-lg text-center">
-                      <div className="mb">
-                        <img
-                          className="w-full md:w-1/4 mx-auto rounded-full object-cover object-center"
-                          src="https://i1.pngguru.com/preview/137/834/449/cartoon-cartoon-character-avatar-drawing-film-ecommerce-facial-expression-png-clipart.jpg"
-                          alt="Avatar Upload"
-                        />
-                      </div>
+                  <div className=" border-0 p-2">
+                  <div className="flex justify-center">
+                    <div>
+                      <img
+                        className="w-32 h-32 rounded-full"
+                        src="https://i1.pngguru.com/preview/137/834/449/cartoon-cartoon-character-avatar-drawing-film-ecommerce-facial-expression-png-clipart.jpg"
+                        alt=""
+                      />
                     </div>
                   </div>
+                  {/* Photo Select */}
+                  <div className="flex justify-center mt-4">
+                    <div className="md:w-full">
+                      <input
+                        onChange={handleChange}
+                        type="file"
+                        className="outline-0 focus:font-extralight border-2 rounded-md px-3 py-1 border-gray-200 placeholder-gray-600 w-full mb-3"
+                        placeholder="Photo"
+                        name="guardianAvatar"
+                      />
+                    </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
