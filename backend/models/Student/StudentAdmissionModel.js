@@ -22,6 +22,10 @@ const admissionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    nationality: {
+      type: String,
+      required: true,
+    },
     phone: {
       type: Number,
       required: true,
@@ -60,7 +64,7 @@ const admissionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    blood: {
+    bloodGroup: {
       type: String,
       required: true,
     },

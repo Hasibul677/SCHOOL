@@ -31,7 +31,7 @@ const StudentPreEdu = () => {
           {/* onChange={handleChange} */}
           <div className="w-full flex items-center justify-center">
             <div className="bg-gray-100 py-2 px-10 w-full rounded-lg ">
-              <div className="sm:text-2xl text-2xl font-semibold  mb-10 pt-5">
+              <div className="sm:text-2xl text-2xl font-semibold  mb-10 pt-5 uppercase">
                 Student Previous Education (optional)
                 <hr className="bg-gray-800 mt-1" />
               </div>
